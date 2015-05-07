@@ -2,6 +2,7 @@
 
 (require 'clojure-mode)
 (require 'clojure-mode-extra-font-locking)
+(require 'cider-eval-sexp-fu)
 (require 'clojure-cheatsheet)
 (require 'cider)
 
@@ -55,6 +56,7 @@
 (setq cider-repl-use-pretty-printing t)
 (setq cider-repl-shortcut-dispatch-char ?\,)
 
+(setq cider-test-show-report-on-success t)
 (setq cider-interactive-eval-result-prefix ";; => ")
 
 (define-key clojure-mode-map (kbd "C-c C-i") 'cider-inspect)
@@ -97,6 +99,9 @@
 (add-hook 'cider-mode-hook      'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook      'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+
+;; (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
+
 
 (defun set-auto-complete-as-completion-at-point-function ()
   (setq completion-at-point-functions '(auto-complete)))
