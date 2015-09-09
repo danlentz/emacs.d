@@ -14,7 +14,7 @@
    (:handler 'slime-repl-quickload)
    (:one-liner "Quickload a Lisp system."))))
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+;; (load (expand-file-name "~/quicklisp/slime-helper.el"))
 
 ;; Replace "sbcl" with the path to your implementation
 
