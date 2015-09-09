@@ -44,7 +44,8 @@
 ;;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (package-initialize)
-(add-to-list 'load-path "/Users/dan.lentz/.emacs.d/local/")
+(add-to-list 'load-path
+ (expand-file-name "~/.emacs.d/local/"))
 
 
 ;;; GLOBAL
