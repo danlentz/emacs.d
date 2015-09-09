@@ -20,6 +20,8 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "menlo" :height 96))))
  '(bold ((t (:family "menlo" :weight bold))))
+ '(company-template-field ((t (:background "#EAE5CC" :foreground "black"))))
+ '(company-tooltip ((t (:background "#0"))))
  '(font-lock-builtin-face ((t (:inherit default :foreground "LightSteelBlue3"))))
  '(font-lock-comment-face ((t (:inherit italic :foreground "azure4"))))
  '(font-lock-constant-face ((t (:inherit default :foreground "SlateBlue2"))))
@@ -34,7 +36,7 @@
  '(mode-line-inactive ((t (:inherit mode-line :foreground "gray45" :background "gray30"))))
  '(variable-pitch ((t (:family "Tahoma")))))
 
-(require 'cl) 
+(require 'cl)
 (require 'package)
 
 (add-to-list 'package-archives
@@ -52,15 +54,14 @@
 (require 'mac)
 (require 'git)
 (require 'text)
-
-;; (add-to-list 'load-path "/Users/dan/.emacs.d/lib/helm/")
-;; (add-to-list 'load-path "/Users/dan/.emacs.d/lib/async/")
-;; (require 'helm-config)
-
 (require 'theme)
-(require 'auto-completion)
+(require 'backup)
+;; (require 'complete-ac)
+(require 'complete-company)
+(require 'yas)
 (require 'undo)
 (require 'lisp)
+(require 'slime-quicklisp)
 (require 'clojure)
 (require 'keyboard)
 (require 'keypad)
@@ -72,26 +73,10 @@
 (set-default 'indicate-empty-lines t)
 (set-default 'imenu-auto-rescan t)
 (defalias 'yes-or-no-p 'y-or-n-p)
-
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (require 'markup)
-
-;; ;;; ORG-MODE
- 
-;; (global-set-key [(control c) ?l]          'org-store-link)
-;; (global-set-key [(control c) (control l)] 'org-store-link)
- 
-;; (global-set-key [(control c) ?a]          'org-agenda)
-;; (global-set-key [(control c) (control a)] 'org-agenda)
- 
-;; (global-set-key [(control c) ?b]          'org-iswitchb)
-;; (global-set-key [(control c) (control b)] 'org-iswitchb)
- 
-;; (setq org-todo-keywords
-;;       '((sequence "TODO(t)" "STARTED(s)" "WAITING(w@/!)"
-;; 		  "|" "DONE(d!)" "CANCELLED(c!)")))
-
-;; (setq org-use-fast-todo-selection t)
+(require 'org-lentz)
 
 
 ;; (put 'downcase-region 'disabled nil)

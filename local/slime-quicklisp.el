@@ -25,17 +25,17 @@
 
 
 (defun slime-quicklisp-open-inspector-if (inspected-parts)
-  (or 
+  (or
    (and inspected-parts (or (slime-open-inspector inspected-parts) t))
    (minibuffer-message "nothing to inpsect, declining to display with *slime-inspector*")))
 
 ;; (defun slime-inspect-quicklisp-release ()
 ;;   ;; (slime-inspect-quicklisp-release "yason")
 ;;   (interactive)
-;;   (if (slime-connected-p)      
+;;   (if (slime-connected-p)
 ;;       (let ((inspect-if (slime-get-quicklisp-system-completions)))
-;;         (and inspect-if 
-;;              ;; (prog1 
+;;         (and inspect-if
+;;              ;; (prog1
 ;;              ;;     inspect-if
 ;;           (slime-eval-async `(swank:find-ql-release ,inspect-if)
 ;;             'slime-quicklisp-open-inspector-if)))
@@ -47,3 +47,5 @@
 ;;      (defslime-repl-shortcut ql-release ("ql-release")
 ;;        (:handler 'slime-inspect-quicklisp-release)
 ;;        (:one-liner "Inspect a quicklisp release."))))
+
+(provide 'slime-quicklisp)

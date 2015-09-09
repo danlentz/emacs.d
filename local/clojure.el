@@ -5,26 +5,25 @@
 (require 'cider-eval-sexp-fu)
 (require 'clojure-cheatsheet)
 (require 'cider)
+(require 'clj-refactor)
+
+
+(require 'smartparens)
+;; (smartparens-global-mode 1)
 
 ;; (require 'align-cljlet)
 
 ;; (require 'datomic-snippets-autoloads
 ;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets-autoloads.el")
 ;; (require 'datomic-snippets
-;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets.el")        
-;; (require 'nrepl-inspect
-;; "/Volumes/u/dan/clj/nrepl-inspect/nrepl-inspect.el")
+;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets.el")
+
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
 (add-hook 'clojure-mode-hook 'ruler-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'nrepl-connected-hook 'cider-enable-on-existing-clojure-buffers)
-(add-hook 'clojure-mode-hook
-	  (lambda ()
-	    ;; (clj-refactor-mode 1)
-	    ;; (cljr-add-keybindings-with-prefix "C-c C-m")
-	    ))
 
 ;; (add-hook 'clojure-mode-hook 'clojure-test-maybe-enable)
 ;; (add-hook 'cider-repl-mode-hook 'paredit-mode)
@@ -85,32 +84,66 @@
 ;; (setq clojure-font-lock-comment-sexp t)
 
 
+
+;;;
+;;; Clojure Refactor Mode
+;;;
+
+(setq cljr-favor-prefix-notation nil)
+
+(dolist (mapping '(("pp" . "clojure.pprint")
+                   ("fs" . "me.raynes.fs")
+                   ("io" . "clojure.java.io")
+                   ("log" . "clojure.tools.logging")
+                   ("edn" . "clojure.edn")
+                   ("jdbc" . "clojure.java.jdbc")
+                   ("memo" . "clojure.core.memoize")
+                   ("set" . "clojure.set")
+                   ("uuid" . "clj-uuid")
+                   ("http" . "clj-http.client")
+                   ("time" . "clj-time.core")
+                   ("json" . "cheshire.core")
+                   ("table" . "table.core")
+                   ("async" . "clojure.core.async")
+                   ("string" . "clojure.string")))
+  (add-to-list 'cljr-magic-require-namespaces mapping t))
+
+
+(add-hook 'clojure-mode-hook
+	  (lambda ()
+	     (clj-refactor-mode 1)
+	     (cljr-add-keybindings-with-prefix "C-c C-x")
+	    ))
+
+
+
+
 ;;;
 ;;; Auto-Complete-Mode
 ;;;
 
-(eval-after-load "auto-complete"
-  '(progn
-     (add-to-list 'ac-modes 'cider-mode)
-     (add-to-list 'ac-modes 'cider-repl-mode)))
+;; (eval-after-load "auto-complete"
+;;   '(progn
+;;      (add-to-list 'ac-modes 'cider-mode)
+;;      (add-to-list 'ac-modes 'cider-repl-mode)))
 
-(require 'ac-cider)
+;; (require 'ac-cider)
 
-(add-hook 'cider-mode-hook      'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook      'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+;; (add-hook 'cider-mode-hook      'ac-flyspell-workaround)
+;; (add-hook 'cider-mode-hook      'ac-cider-setup)
+;; (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 
 ;; (add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
 
 
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
+;; (defun set-auto-complete-as-completion-at-point-function ()
+;;   (setq completion-at-point-functions '(auto-complete)))
 
-(add-hook 'auto-complete-mode-hook
-	  'set-auto-complete-as-completion-at-point-function)
+;; (add-hook 'auto-complete-mode-hook
+;; 	  'set-auto-complete-as-completion-at-point-function)
 
-(add-hook 'cider-mode-hook
-	  'set-auto-complete-as-completion-at-point-function)
+;; (add-hook 'cider-mode-hook
+;; 	  'set-auto-complete-as-completion-at-point-function)
 
 
 

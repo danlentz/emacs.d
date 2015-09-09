@@ -13,3 +13,4 @@
        (let ((yas/prompt-functions '(yas/completing-prompt)))
              ad-do-it))
 
+(provide 'yas)
