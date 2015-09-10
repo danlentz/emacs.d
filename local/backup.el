@@ -13,4 +13,11 @@
 (setq auto-save-file-name-transforms
       `(("\\(?:[^/]*/\\)*\\(.*\\)" ,(concat autosave-dir "\\1") t)))
 
+;; Auto Revert
+
+(autoload 'auto-revert-mode "autorevert" nil t)
+(autoload 'turn-on-auto-revert-mode "autorevert" nil nil)
+(autoload 'global-auto-revert-mode "autorevert" nil t)
+(global-auto-revert-mode t)
+
 (provide 'backup)
