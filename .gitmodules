@@ -4,3 +4,6 @@
 [submodule "lib/cider"]
 	path = lib/cider
 	url = git://github.com/clojure-emacs/cider.git
+[submodule "lib/clojure-mode"]
+	path = lib/clojure-mode
+	url = git://github.com/clojure-emacs/clojure-mode.git
