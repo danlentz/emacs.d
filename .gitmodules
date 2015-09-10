@@ -1,0 +1,6 @@
+[submodule "lib/slime"]
+	path = lib/slime
+	url = git://github.com/slime/slime.git
+[submodule "lib/cider"]
+	path = lib/cider
+	url = git://github.com/clojure-emacs/cider.git
