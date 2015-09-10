@@ -97,7 +97,7 @@
 
 (require 'markup)
 (require 'org-lentz)
-
+(require 'server-init)
 
 ;; (put 'downcase-region 'disabled nil)
 ;; (put 'upcase-region 'disabled nil)
