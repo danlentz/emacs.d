@@ -18,7 +18,7 @@
 (custom-set-variables
  '(lisp-font-lock-keywords lisp-font-lock-keywords-2)
  '(blink-matching-paren t t)
- '(show-paren-style 'expression t)
+;; '(show-paren-style 'expression t)
  '(show-paren-delay 0.1 t)
  '(show-paren-ring-bell-on-mismatch nil t)
  '(show-paren-highlight-openparen t t)
@@ -26,12 +26,14 @@
  '(lisp-indent-maximum-backtracking 6 t)
  '(eldoc-minor-mode-string " d"))
 
-(custom-set-faces
- '(hl-line ((t (:background "gray12"))))
- '(highlight ((t (:background "skyblue4"))))
- '(show-paren-match-face ((t (:foreground "gray12"))))
- '(show-paren-mismatch-face ((t (;; :background "dimgray"
-                                 :foreground "firebrick1")))))
+;; (custom-set-faces
+;;  '(hl-line ((t (:background "gray12"))))
+;;  '(highlight ((t (:background "skyblue4"))))
+;;  '(show-paren-match-face ((t (:foreground "gray12"))))
+;;  '(show-paren-mismatch-face ((t (;; :background "dimgray"
+;;                                  :foreground "firebrick1")))))
 
+(require 'rainbow-delimiters)
+(rainbow-delimiters-mode 1)
 
 (provide 'lisp)

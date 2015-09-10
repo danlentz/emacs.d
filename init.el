@@ -16,7 +16,7 @@
  '(lisp-indent-maximum-backtracking 6)
  '(package-selected-packages
    (quote
-    (session recentf-ext redo+ paredit-menu undo-tree smartparens outorg osx-dictionary osx-clipboard osx-browse orgtbl-ascii-plot org-mac-link org-link-travis org-fstree org-elisp-help org-cliplink org-caldav org-bullets org-beautify-theme markdown-mode+ magit-gh-pulls magit-find-file java-snippets haml-mode dropdown-list docbook-snippets dired-imenu dired+ datomic-snippets company common-lisp-snippets color-theme-sanityinc-solarized clojure-snippets clojure-quick-repls clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor cider-eval-sexp-fu ac-cider)))
+    (rainbow-delimiters recentf-ext redo+ paredit-menu undo-tree smartparens outorg osx-dictionary osx-clipboard osx-browse orgtbl-ascii-plot org-mac-link org-link-travis org-fstree org-elisp-help org-cliplink org-caldav org-bullets org-beautify-theme markdown-mode+ magit-gh-pulls magit-find-file java-snippets haml-mode dropdown-list docbook-snippets dired-imenu dired+ datomic-snippets company common-lisp-snippets color-theme-sanityinc-solarized clojure-snippets clojure-quick-repls clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor cider-eval-sexp-fu ac-cider)))
  '(save-place t nil (saveplace))
  '(show-paren-delay 0.1)
  '(show-paren-highlight-openparen t)
