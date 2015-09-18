@@ -33,9 +33,12 @@
    '(mode-line-inactive
      ((t (:inherit mode-line :foreground "gray45" :background "gray30")))))
 
+(if (functionp 'global-hi-lock-mode)
+  (global-hi-lock-mode 1)
+  (hi-lock-mode 1))
+
 
 ;; (require 'solarized)
-;; (global-hi-lock-mode 1)
 ;; (global-font-lock-mode t)  
 
 ;; (add-hook 'after-init-hook (lambda () (load-theme 'solarized-dark t)))

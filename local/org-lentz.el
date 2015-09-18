@@ -7,7 +7,8 @@
           (lambda ()
             (org-bullets-mode 1)))
 
-; (load-theme 'org-beautify-theme t)
+                                        ; (load-theme 'org-beautify-theme t)
+                                        ; (require 'org-beautify-theme)
 
 (global-unset-key [(control o)])
 

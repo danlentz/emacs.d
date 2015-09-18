@@ -75,6 +75,7 @@
 (require 'backup)
 (require 'recently)
 (require 'fixme)
+(require 'dired-init)
 ;; (require 'complete-ac)
 (require 'complete-company)
 (require 'yas)
