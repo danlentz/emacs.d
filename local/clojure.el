@@ -70,15 +70,23 @@
 
 ;; (eval-after-load 'company '(add-to-list 'company-backends 'company-cider))
 
-
-(define-key clojure-mode-map [kp-add]
+(define-key clojure-mode-map [(meta ?\r)]
   'cider-eval-last-sexp)
-(define-key clojure-mode-map [(control kp-add)]
-  'cider-pprint-eval-last-sexp)
+
+(define-key clojure-mode-map [(meta ?=)]
+  'cider-eval-print-last-sexp)
+
+(define-key clojure-mode-map [(control meta ?=)]
+  'cider-eval-last-sexp-to-repl)
+
 (define-key clojure-mode-map [(meta kp-add)]
   'cider-eval-print-last-sexp)
+
 (define-key clojure-mode-map [(control meta kp-add)]
   'cider-eval-last-sexp-to-repl)
+
+(define-key clojure-mode-map [(meta ?i)]
+  'cider-inspect)
 
 ;; Deprecated
 ;; (setq clojure-font-lock-comment-sexp t)
