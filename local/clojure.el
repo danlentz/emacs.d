@@ -3,7 +3,7 @@
 (require 'clojure-mode)
 (require 'clojure-mode-extra-font-locking)
 (require 'cider-eval-sexp-fu)
-(require 'clojure-cheatsheet)
+;; (require 'clojure-cheatsheet)
 (require 'cider)
 (require 'clj-refactor)
 
