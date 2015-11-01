@@ -60,6 +60,12 @@
 (global-set-key [(control o) ?p]          'org-set-property)
 (global-set-key [(control o) (control p)] 'org-set-property)
 
+(global-set-key [(control o) ?i]          'org-clock-in)
+(global-set-key [(control o) (control i)] 'org-clock-in)
+
+(global-set-key [(control o) ?o]          'org-clock-out)
+(global-set-key [(control o) (control o)] 'org-clock-out)
+
 (global-set-key [(control o) ?t]          'org-set-tags)
 (global-set-key [(control o) (control t)] 'org-set-tags)
 
