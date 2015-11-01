@@ -10,16 +10,21 @@
    (quote
     ("4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" default)))
  '(eldoc-minor-mode-string " d")
+ '(fill-column 72)
  '(indicate-buffer-boundaries (quote left))
  '(lisp-el-font-lock-keywords lisp-font-lock-keywords-2 t)
  '(lisp-indent-function (quote common-lisp-indent-function))
  '(lisp-indent-maximum-backtracking 6)
+ '(org-agenda-files
+   (quote
+    ("~/org/journal.org" "~/org/notes.org" "~/org/tasks.org" "~/org/pershing.org")))
  '(package-selected-packages
    (quote
     (rainbow-delimiters recentf-ext redo+ paredit-menu undo-tree smartparens outorg osx-dictionary osx-clipboard osx-browse orgtbl-ascii-plot org-mac-link org-link-travis org-fstree org-elisp-help org-cliplink org-caldav org-bullets org-beautify-theme markdown-mode+ magit-gh-pulls magit-find-file java-snippets haml-mode dropdown-list docbook-snippets dired-imenu dired+ datomic-snippets company common-lisp-snippets color-theme-sanityinc-solarized clojure-snippets clojure-quick-repls clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor cider-eval-sexp-fu ac-cider)))
  '(save-place t nil (saveplace))
+ '(session-use-package t nil (session))
  '(show-paren-delay 0.1)
- '(show-paren-highlight-openparen t)
+ '(show-paren-highlight-openparen t t)
  '(show-paren-mode t)
  '(show-paren-ring-bell-on-mismatch nil)
  '(show-paren-style (quote expression))
