@@ -72,7 +72,7 @@
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/tasks.org" "Tasks")
+      '(("t" "Todo"    entry (file+headline "~/org/tasks.org" "Tasks")
          "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a")))
@@ -84,5 +84,11 @@
         "~/org/notes.org"
         "~/org/journal.org"))
 
+(setq org-todo-keyword-faces
+      '(("TODO"     . (:foreground "#859900" :weight bold))
+        ("STARTED"  . (:foreground "#fdf6e3" :weight bold))
+        ("CANCELED" . (:foreground "#586e75" :slant italic))
+        ("WAITING"  . (:foreground "#d33682" :weight bold))
+        ("DONE" . "#2aa198")))
 
 (provide 'org-lentz)

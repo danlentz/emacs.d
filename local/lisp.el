@@ -4,7 +4,7 @@
 (define-key emacs-lisp-mode-map [(control x) ?v] 'eval-buffer)
 (define-key emacs-lisp-mode-map (kbd "C-\\") 'completion-at-point)
 (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
-(define-key lisp-mode-map        (kbd "TAB") 'indent-or-complete)
+;(define-key lisp-mode-map        (kbd "TAB") 'indent-or-complete)
 (define-key read-expression-map  (kbd "TAB") 'lisp-complete-symbol)
 
 (add-hook 'emacs-lisp-mode-hook 'imenu-add-menubar-index)

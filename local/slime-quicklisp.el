@@ -10,6 +10,7 @@
 (add-hook 'slime-mode-hook
             (lambda ()
               (setq slime-truncate-lines nil)
+              (setq tab-always-indent 'complete)
               (setq slime-enable-evaluate-in-emacs t)
               (setq slime-complete-symbol*-fancy t)
               (unless (slime-connected-p)

@@ -25,12 +25,20 @@
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'nrepl-connected-hook 'cider-enable-on-existing-clojure-buffers)
 
+(defun local-clojure-mode-hook ()
+    (clj-refactor-mode 1)
+    (yas-minor-mode 1) ; for adding require/use/import statements
+    ;; This choice of keybinding leaves cider-macroexpand-1 unbound
+    (cljr-add-keybindings-with-prefix "C-c C-m"))
+
+(add-hook 'clojure-mode-hook #'local-clojure-mode-hook)
+
 ;; (add-hook 'clojure-mode-hook 'clojure-test-maybe-enable)
 ;; (add-hook 'cider-repl-mode-hook 'paredit-mode)
 ;; (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
 ;; (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
-(setq clojure-defun-style-default-indent t)
+(setq clojure-defun-style-default-indent nil)
 
 (setq cider-popup-stacktraces t)
 (setq cider-stacktrace-default-filters '(tooling dup)) ; java, clj, repl
