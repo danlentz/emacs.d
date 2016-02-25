@@ -39,6 +39,8 @@
 ;; (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
 (setq clojure-defun-style-default-indent nil)
+(setq clojure-align-forms-automatically t)
+(setq clojure-indent-style :align-arguments)
 
 (setq cider-popup-stacktraces t)
 (setq cider-stacktrace-default-filters '(tooling dup)) ; java, clj, repl
@@ -62,6 +64,8 @@
 (setq cider-repl-use-clojure-font-lock t)
 (setq cider-repl-use-pretty-printing t)
 (setq cider-repl-shortcut-dispatch-char ?\,)
+(setq cider-font-lock-dynamically t)
+
 
 (setq cider-test-show-report-on-success t)
 (setq cider-interactive-eval-result-prefix ";; => ")
