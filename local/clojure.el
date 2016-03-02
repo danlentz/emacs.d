@@ -6,18 +6,14 @@
 ;; (require 'clojure-cheatsheet)
 (require 'cider)
 (require 'clj-refactor)
-
-
 (require 'smartparens)
 ;; (smartparens-global-mode 1)
-
 ;; (require 'align-cljlet)
 
 ;; (require 'datomic-snippets-autoloads
 ;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets-autoloads.el")
 ;; (require 'datomic-snippets
 ;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets.el")
-
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'clojure-mode-hook 'subword-mode)
@@ -26,10 +22,9 @@
 (add-hook 'nrepl-connected-hook 'cider-enable-on-existing-clojure-buffers)
 
 (defun local-clojure-mode-hook ()
-    (clj-refactor-mode 1)
-    (yas-minor-mode 1) ; for adding require/use/import statements
-    ;; This choice of keybinding leaves cider-macroexpand-1 unbound
-    (cljr-add-keybindings-with-prefix "C-c C-m"))
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  (cljr-add-keybindings-with-prefix "C-c C-z"))
 
 (add-hook 'clojure-mode-hook #'local-clojure-mode-hook)
 
@@ -56,7 +51,7 @@
 (setq cider-repl-popup-stacktraces t)
 (setq cider-repl-wrap-history t)
 (setq cider-repl-history-size 1000)
-(setq cider-repl-history-file "~/etc/cider-history")
+(setq cider-repl-history-file "~/tmp/cider-history")
 (setq cider-repl-pop-to-buffer-on-connect t)
 (setq cider-repl-display-in-current-window nil)
 (setq cider-repl-print-length 256)
@@ -66,12 +61,8 @@
 (setq cider-repl-shortcut-dispatch-char ?\,)
 (setq cider-font-lock-dynamically t)
 
-
 (setq cider-test-show-report-on-success t)
 (setq cider-interactive-eval-result-prefix ";; => ")
-
-(define-key clojure-mode-map (kbd "C-c C-i") 'cider-inspect)
-(define-key clojure-mode-map (kbd "M-q")     'indent-pp-sexp)
 
 ;; (define-key clojure-mode-map (kbd "C-M-q") 'align-cljlet)
 
@@ -100,6 +91,18 @@
 (define-key clojure-mode-map [(meta ?i)]
   'cider-inspect)
 
+(define-key clojure-mode-map [(control ?c)(control ?i)]
+  'cider-inspect)
+
+(define-key clojure-mode-map [(meta ?m)]
+  'cider-macroexpand-1)
+
+(define-key clojure-mode-map [(meta ?q)]
+  'indent-pp-sexp)
+
+(define-key clojure-mode-map [(meta ?z)]
+  'cider-switch-to-repl-buffer)
+
 ;; Deprecated
 ;; (setq clojure-font-lock-comment-sexp t)
 
@@ -111,29 +114,23 @@
 
 (setq cljr-favor-prefix-notation nil)
 
-(dolist (mapping '(("pp" . "clojure.pprint")
-                   ("fs" . "me.raynes.fs")
-                   ("io" . "clojure.java.io")
-                   ("log" . "clojure.tools.logging")
-                   ("edn" . "clojure.edn")
-                   ("jdbc" . "clojure.java.jdbc")
-                   ("memo" . "clojure.core.memoize")
-                   ("set" . "clojure.set")
-                   ("uuid" . "clj-uuid")
-                   ("http" . "clj-http.client")
-                   ("time" . "clj-time.core")
-                   ("json" . "cheshire.core")
-                   ("table" . "table.core")
-                   ("async" . "clojure.core.async")
+(dolist (mapping '(("pp"     . "clojure.pprint")
+                   ("fs"     . "me.raynes.fs")
+                   ("io"     . "clojure.java.io")
+                   ("log"    . "clojure.tools.logging")
+                   ("edn"    . "clojure.edn")
+                   ("jdbc"   . "clojure.java.jdbc")
+                   ("memo"   . "clojure.core.memoize")
+                   ("set"    . "clojure.set")
+                   ("uuid"   . "clj-uuid")
+                   ("http"   . "clj-http.client")
+                   ("time"   . "clj-time.core")
+                   ("json"   . "cheshire.core")
+                   ("table"  . "table.core")
+                   ("async"  . "clojure.core.async")
                    ("string" . "clojure.string")))
   (add-to-list 'cljr-magic-require-namespaces mapping t))
 
-
-(add-hook 'clojure-mode-hook
-	  (lambda ()
-	     (clj-refactor-mode 1)
-	     (cljr-add-keybindings-with-prefix "C-c C-x")
-	    ))
 
 
 

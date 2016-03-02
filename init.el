@@ -29,6 +29,7 @@
  '(package-selected-packages
    (quote
     (rainbow-delimiters recentf-ext redo+ paredit-menu undo-tree smartparens outorg osx-dictionary osx-clipboard osx-browse orgtbl-ascii-plot org-mac-link org-link-travis org-fstree org-elisp-help org-cliplink org-caldav org-bullets org-beautify-theme markdown-mode+ magit-gh-pulls magit-find-file java-snippets haml-mode dropdown-list docbook-snippets dired-imenu dired+ datomic-snippets company common-lisp-snippets color-theme-sanityinc-solarized clojure-snippets clojure-quick-repls clojure-mode-extra-font-locking clojure-cheatsheet clj-refactor cider-eval-sexp-fu ac-cider)))
+ '(safe-local-variable-values (quote ((Syntax . ANSI-Common-Lisp))))
  '(save-place t nil (saveplace))
 ;; '(session-use-package t nil (session))
  '(show-paren-delay 0.1)
@@ -67,6 +68,9 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "menlo" :height 96))))
  '(bold ((t (:family "menlo" :weight bold))))
+ '(cider-repl-stdout-face ((t (:inherit italic :foreground "#6c71c4"))))
+ '(clojure-interop-method-face ((t (:inherit italic :foreground "#b58900"))))
+ '(clojure-keyword-face ((t (:inherit default :foreground "#585858"))))
  '(company-template-field ((t (:background "#EAE5CC" :foreground "black"))))
  '(company-tooltip ((t (:background "#0"))))
  '(font-lock-builtin-face ((t (:inherit default :foreground "LightSteelBlue3"))))
@@ -86,6 +90,7 @@
  '(mode-line ((t (:family "monaco" :height 90 :foreground "honeydew" :background "gray0"))))
  '(mode-line-inactive ((t (:inherit mode-line :foreground "gray45" :background "gray30"))))
  '(region ((t (:background "SkyBlue4"))))
+ '(show-paren-match ((t (:inverse-video nil :background "#073642"))))
  '(show-paren-mismatch ((t (:background "dimgray" :foreground "firebrick1"))))
  '(slime-repl-inputed-output-face ((t (:inherit italic :foreground "knobColor"))))
  '(slime-repl-prompt-face ((t (:inherit bold :foreground "PaleVioletRed3"))))
