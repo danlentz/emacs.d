@@ -16,8 +16,9 @@
 ;;  "/Volumes/u/dan/clj/datomic-snippets/datomic-snippets.el")
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(add-hook 'clojure-mode-hook 'subword-mode)
-(add-hook 'clojure-mode-hook 'ruler-mode)
+(add-hook 'clojure-mode-hook    'subword-mode)
+(add-hook 'clojure-mode-hook    'ruler-mode)
+(add-hook 'clojure-mode-hook    'rainbow-delimiters-mode)
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'nrepl-connected-hook 'cider-enable-on-existing-clojure-buffers)
 

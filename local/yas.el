@@ -8,6 +8,8 @@
 ;; default hotkey `C-c & C-s` is still valid
 (global-set-key (kbd "C-c ; s") 'yas/insert-snippet)
 
+(add-to-list 'yas-snippet-dirs "~/Dropbox/snippet")
+
 ;; give yas/dropdown-prompt in yas/prompt-functions a chance
 (require 'dropdown-list)
 

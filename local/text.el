@@ -6,4 +6,8 @@
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+;; (global-set-key (kbd "M-l")
+;;                 (lambda () (interactive)
+;;                   (insert (make-char 'greek-iso8859-7 107))))
+
 (provide 'text)

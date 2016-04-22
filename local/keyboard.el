@@ -1,7 +1,7 @@
 
 (defun remap-parens ()
   "Swap the () and [] keys in emacs."
-  (interactive)        
+  (interactive)
   (or keyboard-translate-table
       (progn
         ;; First make a translate table that does the identity translation.
@@ -30,5 +30,12 @@
   (aset keyboard-translate-table ?\] ?\]))
 
 (remap-parens)
+
+(require 'which-key)
+
+;; (which-key-setup-side-window-right)
+;; (which-key-setup-side-window-bottom)
+
+(which-key-mode)
 
 (provide 'keyboard)

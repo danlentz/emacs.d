@@ -100,9 +100,11 @@
 (require 'cl)
 (require 'package)
 
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.org/packages/") t)
-;;	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+(setq package-archives
+      '(("melpa" . "http://melpa.org/packages/")
+        ("gnu"   . "http://elpa.gnu.org/packages/")))
+
+;; '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 (package-initialize)
 (add-to-list 'load-path
